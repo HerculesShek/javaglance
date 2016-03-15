@@ -1,12 +1,12 @@
 package test.staticinner;
 
 
-import will.staticinner.OuterPublicStaticInner;
+import will.staticinner.ProtectedStaticInner;
 
 public class ProtectedInner {
     public static void main(String[] args) {
-        OuterPublicStaticInner.Inner inner = new OuterPublicStaticInner.Inner("Will");
-        inner.say();
-        System.out.println(OuterPublicStaticInner.getA() + " inner class instance(s)");
+        // ProtectedStaticInner.Inner 是protected修饰的 是包级别的访问权限
+        // ProtectedStaticInner.Inner inner = new ProtectedStaticInner.Inner("Will");
+        System.out.println(ProtectedStaticInner.getA() + " inner class instance(s)");
     }
 }
