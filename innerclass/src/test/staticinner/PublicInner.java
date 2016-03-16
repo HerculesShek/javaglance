@@ -1,12 +1,12 @@
 package test.staticinner;
 
 
-import will.staticinner.OuterPublicStaticInner;
+import will.staticinner.PublicStaticInner;
 
 public class PublicInner {
     public static void main(String[] args) {
-        OuterPublicStaticInner.Inner inner = new OuterPublicStaticInner.Inner("Will");
+        PublicStaticInner.Inner inner = new PublicStaticInner.Inner("Will");
         inner.say();
-        System.out.println(OuterPublicStaticInner.getA() + " inner class instance(s)");
+        System.out.println(PublicStaticInner.getA() + " inner class instance(s)");
     }
 }

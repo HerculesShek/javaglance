@@ -1,6 +1,6 @@
 package will.staticinner;
 
-public class OuterPublicStaticInner {
+public class PublicStaticInner {
     private static int a = 0;
     private int age;
 
@@ -32,11 +32,11 @@ public class OuterPublicStaticInner {
     }
 
     public static void main(String[] args) {
-        OuterPublicStaticInner.Inner inner = new OuterPublicStaticInner.Inner("Will");
+        PublicStaticInner.Inner inner = new PublicStaticInner.Inner("Will");
         inner.say();
-        OuterPublicStaticInner.Inner inner2 = new OuterPublicStaticInner.Inner("Jack");
+        PublicStaticInner.Inner inner2 = new PublicStaticInner.Inner("Jack");
         inner2.say();
-        System.out.println(OuterPublicStaticInner.getA() + " inner class instance(s)");
+        System.out.println(PublicStaticInner.getA() + " inner class instance(s)");
     }
 
 }
