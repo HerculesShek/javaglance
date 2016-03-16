@@ -3,12 +3,23 @@ package will.localinner;
 import will.staticinner.Speak;
 
 public class ScopeInner {
+    private int age = 102;
+    private static int num = 9;
 
     public Speak track(String city) {
-        return this.getSpeak(city, true);
+        return getSpeak(city, true);
     }
 
-    public Speak getSpeak(String str, boolean b) {
+    private static int addTwo(int i) {
+        return i + 2;
+    }
+
+    private int addOne(int i) {
+        return i + 1;
+    }
+
+
+    public static Speak getSpeak(String str, boolean b) {
         if (b) {
             int e = 0;
             final int n = 100;
@@ -18,6 +29,10 @@ public class ScopeInner {
                 private int e = 32;
                 private int j;
 
+                private int addOne(int i) {
+                    return i + 100;
+                }
+
                 public void printN() {
                     System.out.println(n);
                 }
@@ -26,7 +41,10 @@ public class ScopeInner {
                 // public static int getNum() {return 44;}
 
                 public Inner(String s) {
-                    e++;
+                    // e = ScopeInner.this.addOne(e);
+                    e = addTwo(e);
+                    // System.out.println("age is " + age);
+                    System.out.println("num is " + num);
                     this.destination = s;
                 }
 
@@ -46,6 +64,9 @@ public class ScopeInner {
     public static void main(String[] args) {
         ScopeInner outer = new ScopeInner();
         Speak speak = outer.track("New York");
+        speak.speak();
+
+        Speak speak2 = ScopeInner.getSpeak("ToLoyo", true);
         speak.speak();
     }
 }
