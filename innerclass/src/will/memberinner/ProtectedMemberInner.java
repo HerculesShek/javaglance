@@ -1,5 +1,7 @@
 package will.memberinner;
 
+import will.staticinner.PrivateStaticInner;
+
 public class ProtectedMemberInner {
     private static int a = 0;
 
@@ -10,8 +12,8 @@ public class ProtectedMemberInner {
     /**
      * protected关键词修饰的静态内部类是包级别的访问权限
      */
-    protected static class Inner {
-        private static int num = 45;
+    protected class Inner {
+        // private static int num = 45;
         private String name;
 
         public String getName() {
@@ -28,7 +30,13 @@ public class ProtectedMemberInner {
         }
 
         public void say() {
-            System.out.println(a + "#\t" + this.getName() + " " + num);
+            System.out.println(a + "#\t" + this.getName());
         }
+    }
+
+    public static void main(String[] args) {
+        ProtectedMemberInner outer = new ProtectedMemberInner();
+        ProtectedMemberInner.Inner inner = outer.new Inner("Will");
+        inner.say();
     }
 }
