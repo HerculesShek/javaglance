@@ -8,7 +8,7 @@ import java.io.File;
 public class TreeCmd2 {
     public static void tree(String dir, int depth, boolean showHidden) {
         System.out.println(dir + "/");
-        tree(dir, depth, "|\t", "|-- ", "`-- ", "\t", new String[]{}, 1, showHidden);
+        tree(dir, depth, "|\t", "|-- ", "`-- ", "\t", new String[]{}, showHidden);
     }
 
     /**
@@ -20,11 +20,10 @@ public class TreeCmd2 {
      * @param prefix2    "|-- "
      * @param prefix3    "`-- "
      * @param prefix4    "\t"
-     * @param prefixNum  prefix num
      * @param showHidden -a
      */
     public static void tree(String dir, int depth, String prefix1, String prefix2, String prefix3, String prefix4,
-                            String prefixArr[], int prefixNum, boolean showHidden) {
+                            String prefixArr[], boolean showHidden) {
         if (dir == null) return;
         if ("".equalsIgnoreCase(dir)) return;
         File root = new File(dir);
@@ -48,13 +47,13 @@ public class TreeCmd2 {
             System.out.println(builder.toString() + filename);
 
             if (f.isDirectory() && depth > 0) {
-                String[] newStrArr = null;
+                String[] newStrArr;
                 if (i == files.length - 1) {
                     newStrArr = arrCopyAndAppend(prefixArr, true, prefix1, prefix4);
                 } else {
                     newStrArr = arrCopyAndAppend(prefixArr, false, prefix1, prefix4);
                 }
-                tree(f.getAbsoluteFile().getParent() + File.separator + f.getName(), depth - 1, prefix1, prefix2, prefix3, prefix4, newStrArr, prefixNum + 1, showHidden);
+                tree(f.getAbsoluteFile().getParent() + File.separator + f.getName(), depth - 1, prefix1, prefix2, prefix3, prefix4, newStrArr, showHidden);
             }
         }
     }
