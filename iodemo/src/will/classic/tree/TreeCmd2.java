@@ -40,19 +40,15 @@ public class TreeCmd2 {
             if (!showHidden && f.isHidden()) continue;
             StringBuilder builder = contactBuffer(prefixArr);
             // 该目录下最后一个文件
-            if (i == files.length - 1)
+            boolean isLastFile = (i == files.length - 1);
+            if (isLastFile)
                 builder.append(prefix3);
             else
                 builder.append(prefix2);
             System.out.println(builder.toString() + filename);
 
             if (f.isDirectory() && depth > 0) {
-                String[] newStrArr;
-                if (i == files.length - 1) {
-                    newStrArr = arrCopyAndAppend(prefixArr, true, prefix1, prefix4);
-                } else {
-                    newStrArr = arrCopyAndAppend(prefixArr, false, prefix1, prefix4);
-                }
+                String[] newStrArr = arrCopyAndAppend(prefixArr, isLastFile, prefix1, prefix4);
                 tree(f.getAbsoluteFile().getParent() + File.separator + f.getName(), depth - 1, prefix1, prefix2, prefix3, prefix4, newStrArr, showHidden);
             }
         }
