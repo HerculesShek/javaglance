@@ -6,6 +6,7 @@
 *.jar
 *.war
 *.ear
+/data.txt
 /xz_flag.txt
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
