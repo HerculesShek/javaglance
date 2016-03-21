@@ -1,7 +1,8 @@
 package will.decorator;
 
 /**
- * 装饰角色 持有一个构件对象的引用 并定义一个与构件对象接口一致的方法
+ * 装饰角色
+ * 装饰角色一定要继承或者实现抽象构件 并持有一个构件对象的引用
  */
 public class Decorator extends Component {
 

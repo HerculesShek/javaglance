@@ -7,7 +7,7 @@ public class ConcreteDecorator1 extends Decorator {
 
     @Override
     public void foo() {
-        super.foo();
+        super.foo(); /** 此处一定是调用父类的foo方法 */
         bar1();
     }
 
