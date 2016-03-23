@@ -1,4 +1,4 @@
-package com.will;
+package com.will.firsttry;
 
 public class ThreadDemo extends Thread {
 
