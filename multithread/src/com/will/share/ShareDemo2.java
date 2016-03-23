@@ -1,4 +1,4 @@
-package com.will.sleep;
+package com.will.share;
 
 public class ShareDemo2 implements Runnable {
     int i;

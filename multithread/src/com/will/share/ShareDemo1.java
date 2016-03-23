@@ -1,4 +1,4 @@
-package com.will.sleep;
+package com.will.share;
 
 public class ShareDemo1 implements Runnable {
     @Override
