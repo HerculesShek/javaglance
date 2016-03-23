@@ -1,4 +1,4 @@
-package com.will.mutex.bankdemo;
+package com.will.mutex.amountwithnomutex;
 
 public class FetchMoney {
     public static void main(String[] args) {

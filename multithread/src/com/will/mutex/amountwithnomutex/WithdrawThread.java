@@ -1,4 +1,4 @@
-package com.will.mutex.bankdemo;
+package com.will.mutex.amountwithnomutex;
 
 /**
  * 取钱的动作
