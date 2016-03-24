@@ -1,4 +1,4 @@
-package com.will.mutex.amountwithmutex.nostaticfun2;
+package com.will.mutex.amountwithmutex.syncmethod.nostaticfun2;
 
 public class Account {
 

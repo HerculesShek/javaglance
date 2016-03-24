@@ -1,4 +1,4 @@
-package com.will.mutex.amountwithmutex.staticfun;
+package com.will.mutex.amountwithmutex.syncmethod.staticfun;
 
 public class FetchMoney2 {
     public static void main(String[] args) {

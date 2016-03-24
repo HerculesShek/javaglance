@@ -1,4 +1,4 @@
-package com.will.mutex.amountwithmutex.nostaticfun;
+package com.will.mutex.amountwithmutex.syncmethod.nostaticfun;
 
 public class FetchMoney2 {
     /**

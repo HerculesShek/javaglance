@@ -1,14 +1,14 @@
-package com.will.mutex.amountwithmutex.nostaticfun;
+package com.will.mutex.amountwithmutex.syncmethod.staticfun;
 
 public class Account {
 
-    private int balance;
+    private static int balance;
 
     public Account(int balance) {
-        this.balance = balance;
+        Account.balance = balance;
     }
 
-    public synchronized int withdraw(int amount) {
+    public static synchronized int withdraw(int amount) {
         if (amount <= 0) return -1;
         if (balance <= 0) return -1;
         if (amount > balance) return -2;
@@ -21,7 +21,5 @@ public class Account {
         System.out.println("balance now is " + balance);
         return amount;
     }
-
-
 
 }

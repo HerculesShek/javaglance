@@ -1,4 +1,4 @@
-package com.will.mutex.amountwithmutex.staticfun;
+package com.will.mutex.amountwithmutex.syncmethod.nostaticfun2;
 
 /**
  * 取钱的动作
