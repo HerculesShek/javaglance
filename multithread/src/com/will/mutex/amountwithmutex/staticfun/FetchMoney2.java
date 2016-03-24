@@ -1,6 +1,6 @@
-package com.will.mutex.amountwithmutex;
+package com.will.mutex.amountwithmutex.staticfun;
 
-public class FetchMoney {
+public class FetchMoney2 {
     public static void main(String[] args) {
         Account account = new Account(1000);
 
