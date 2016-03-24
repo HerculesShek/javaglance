@@ -3,7 +3,7 @@ package com.will.mutex.amountwithmutex.synccode.demo1;
 public class Account {
     private Integer balance;
 
-    public Account(int balance) {
+    public Account(Integer balance) {
         this.balance = balance;
     }
 
