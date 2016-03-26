@@ -6,9 +6,9 @@ package com.will.mutex.amountwithmutex.synccode.demo1;
  */
 public class WithdrawThread implements Runnable {
     private Account account;
-    private int amount;
+    private double amount;
 
-    public WithdrawThread(Account account, int amount) {
+    public WithdrawThread(Account account, double amount) {
         this.account = account;
         this.amount = amount;
     }

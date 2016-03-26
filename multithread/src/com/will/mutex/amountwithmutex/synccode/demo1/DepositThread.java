@@ -6,9 +6,9 @@ package com.will.mutex.amountwithmutex.synccode.demo1;
  */
 public class DepositThread implements Runnable {
     private Account account;
-    private int amount;
+    private double amount;
 
-    public DepositThread(Account account, int amount) {
+    public DepositThread(Account account, double amount) {
         this.account = account;
         this.amount = amount;
     }

@@ -8,10 +8,13 @@ import com.sun.tools.corba.se.idl.InterfaceGen;
  */
 public class ManagerBalance {
     public static void main(String[] args) {
-        Account account = new Account(1000);
-        Thread atm = new Thread(new WithdrawThread(account, 600));
-        Thread atm2 = new Thread(new WithdrawThread(account, 400));
-        Thread bank = new Thread(new DepositThread(account, 100));
+        AccountInfo info = new AccountInfo(1000, "New Bank");
+        Account account1 = new Account(info);
+        Account account2 = new Account(info);
+        Account account3 = new Account(info);
+        Thread atm = new Thread(new WithdrawThread(account1, 600));
+        Thread atm2 = new Thread(new WithdrawThread(account2, 600));
+        Thread bank = new Thread(new DepositThread(account3, 400));
 
         atm.start();
         atm2.start();
