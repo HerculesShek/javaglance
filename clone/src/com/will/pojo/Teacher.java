@@ -14,4 +14,9 @@ public class Teacher implements Cloneable {
     public Teacher(String name) {
         this.name = name;
     }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 }

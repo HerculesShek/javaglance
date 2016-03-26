@@ -1,8 +1,12 @@
 package com.will.pojo;
 
+import javax.swing.text.Style;
+
 public class Student implements Cloneable {
     private int age;
     private String name;
+    private Teacher teacher;
+
 
     public Student() {
     }
@@ -28,13 +32,23 @@ public class Student implements Cloneable {
         this.name = name;
     }
 
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+
     @Override
     public Object clone() throws CloneNotSupportedException {
-        return super.clone();
+        Student student = (Student) super.clone();
+        student.setTeacher((Teacher) teacher.clone());
+        return student;
     }
 
     @Override
     public String toString() {
-        return "[name:" + name + ", age:" + age + "]";
+        return "[name:" + name + ", age:" + age + ", teacher:" + teacher.getName() + "]";
     }
 }
