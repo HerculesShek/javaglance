@@ -1,9 +1,11 @@
 package com.will.pojo;
 
-public class StudentSeria implements Cloneable {
+import java.io.*;
+
+public class StudentSeria implements Serializable {
     private int age;
     private String name;
-    private Teacher teacher;
+    private TeacherSeria teacher;
 
 
     public StudentSeria() {
@@ -30,19 +32,22 @@ public class StudentSeria implements Cloneable {
         this.name = name;
     }
 
-    public Teacher getTeacher() {
+    public TeacherSeria getTeacher() {
         return teacher;
     }
 
-    public void setTeacher(Teacher teacher) {
+    public void setTeacher(TeacherSeria teacher) {
         this.teacher = teacher;
     }
 
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-        StudentSeria student = (StudentSeria) super.clone();
-        student.setTeacher((Teacher) teacher.clone());
-        return student;
+    public StudentSeria deepCopy() throws IOException, ClassNotFoundException {
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(bos);
+        oos.writeObject(this);
+
+        ByteArrayInputStream bis = new ByteArrayInputStream(bos.toByteArray());
+        ObjectInputStream ois = new ObjectInputStream(bis);
+        return (StudentSeria) ois.readObject();
     }
 
     @Override

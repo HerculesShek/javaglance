@@ -1,15 +1,18 @@
 package com.will.client;
 
-import com.will.pojo.Student;
-import com.will.pojo.Teacher;
+import com.will.pojo.StudentSeria;
+import com.will.pojo.TeacherSeria;
+
+import java.io.IOException;
 
 public class Main2 {
-    public static void main(String[] args) throws CloneNotSupportedException {
-        Teacher teacher = new Teacher("TNT");
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        TeacherSeria teacher = new TeacherSeria("TNT", 30);
 
-        Student s1 = new Student(24, "Jack");
+        StudentSeria s1 = new StudentSeria(24, "Jack");
         s1.setTeacher(teacher);
-        Student s2 = (Student) s1.clone();
+
+        StudentSeria s2 = s1.deepCopy();
         System.out.println(s1 == s2);
         System.out.println(s2);
 
@@ -20,5 +23,8 @@ public class Main2 {
         System.out.println("-----------------------------");
         s2.getTeacher().setName("CO");
         System.out.println(s1.getTeacher().getName());
+
+        teacher.setName("K2SO4");
+        System.out.println(s2.getTeacher().getName());
     }
 }

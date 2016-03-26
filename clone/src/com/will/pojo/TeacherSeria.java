@@ -1,7 +1,23 @@
 package com.will.pojo;
 
-public class TeacherSeria implements Cloneable {
+import java.io.Serializable;
+
+public class TeacherSeria implements Serializable {
     private String name;
+    private int age;
+
+    public TeacherSeria(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 
     public String getName() {
         return name;
@@ -11,12 +27,4 @@ public class TeacherSeria implements Cloneable {
         this.name = name;
     }
 
-    public TeacherSeria(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-        return super.clone();
-    }
 }
