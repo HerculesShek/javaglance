@@ -3,7 +3,7 @@ package com.will.client;
 import com.will.pojo.Student;
 import com.will.pojo.Teacher;
 
-public class Main {
+public class Main2 {
     public static void main(String[] args) throws CloneNotSupportedException {
         Teacher teacher = new Teacher("TNT");
 

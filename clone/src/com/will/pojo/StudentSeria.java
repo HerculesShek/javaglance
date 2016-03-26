@@ -1,15 +1,15 @@
 package com.will.pojo;
 
-public class Student implements Cloneable {
+public class StudentSeria implements Cloneable {
     private int age;
     private String name;
     private Teacher teacher;
 
 
-    public Student() {
+    public StudentSeria() {
     }
 
-    public Student(int age, String name) {
+    public StudentSeria(int age, String name) {
         this.age = age;
         this.name = name;
     }
@@ -40,7 +40,7 @@ public class Student implements Cloneable {
 
     @Override
     public Object clone() throws CloneNotSupportedException {
-        Student student = (Student) super.clone();
+        StudentSeria student = (StudentSeria) super.clone();
         student.setTeacher((Teacher) teacher.clone());
         return student;
     }
