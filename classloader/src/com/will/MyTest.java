@@ -20,9 +20,15 @@ class Singleton {
 }
 
 public class MyTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException {
         Singleton s1 = Singleton.getSingleton();
         System.out.println("C1 = " + s1.counter1);
         System.out.println("C2 = " + s1.counter2);
+
+        ClassLoader loader = s1.getClass().getClassLoader();
+        System.out.println(loader);
+
+        loader = Class.forName("java.lang.String").getClassLoader();
+        System.out.println(loader);
     }
 }
