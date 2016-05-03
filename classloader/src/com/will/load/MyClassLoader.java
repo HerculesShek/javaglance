@@ -1,7 +1,5 @@
 package com.will.load;
 
-import sun.tools.tree.NewArrayExpression;
-
 import java.io.*;
 
 public class MyClassLoader extends ClassLoader {
