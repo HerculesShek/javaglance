@@ -1,10 +1,12 @@
 package com.will.load;
 
+import sun.tools.tree.NewArrayExpression;
+
 import java.io.*;
 
 public class MyClassLoader extends ClassLoader {
     private String name;
-    private String path = "";
+    private String path = "/Users/baidu/java/myCLasses";
     private final String fileType = ".class";
 
     public MyClassLoader(String name) {
@@ -52,7 +54,7 @@ public class MyClassLoader extends ClassLoader {
         ByteArrayOutputStream baos = null;
 
         try {
-            this.name = this.name.replace(".", File.separator);
+            this.name = name.replace(".", File.separator);
             is = new FileInputStream(new File(path + name + fileType));
             baos = new ByteArrayOutputStream();
             int ch = 0;
@@ -61,6 +63,7 @@ public class MyClassLoader extends ClassLoader {
             }
             data = baos.toByteArray();
         } catch (Exception ignored) {
+            ;
         } finally {
             try {
                 assert is != null;
@@ -75,7 +78,23 @@ public class MyClassLoader extends ClassLoader {
         return data;
     }
 
-    public static void main(String[] args) {
-        System.out.println(File.separator);
+    public static void main(String[] args) throws Exception {
+        // System.out.println(File.separator);
+        MyClassLoader loader1 = new MyClassLoader("loader1");
+        loader1.setPath("/Users/baidu/java/myCLasses/serverlib");
+
+        MyClassLoader loader2 = new MyClassLoader(loader1, "loader2");
+        loader2.setPath("/Users/baidu/java/myCLasses/clientlib");
+
+        MyClassLoader loader3 = new MyClassLoader(null, "loader2");
+        loader2.setPath("/Users/baidu/java/myCLasses/loader3lib");
+
+        test(loader1);
     }
+
+    public static void test(ClassLoader loader) throws Exception {
+        Class c = loader.loadClass("com.will.loader.Sample");
+        Object obj = c.newInstance();
+    }
+
 }
