@@ -1,5 +1,5 @@
 package com.will.switchdemo;
 
 public enum MyEnum {
-    MALE, FEMALE, NEUTRAL;
+    MALE, FEMALE, NEUTRAL
 }
