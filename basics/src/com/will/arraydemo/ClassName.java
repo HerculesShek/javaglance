@@ -1,5 +1,8 @@
 package com.will.arraydemo;
 
+/**
+ * 深入探究数组的原理
+ */
 public class ClassName {
     public static void main(String[] args) {
         int a[] = new int[10];
