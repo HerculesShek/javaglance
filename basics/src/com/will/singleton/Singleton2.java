@@ -1,4 +1,4 @@
-package com.will.classdemo;
+package com.will.singleton;
 
 /**
  * @author Will

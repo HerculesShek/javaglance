@@ -1,6 +1,7 @@
 package com.test.classdemo;
 
-import com.will.classdemo.Singleton;
+import com.will.singleton.EnumSingleton;
+import com.will.singleton.Singleton;
 
 /**
  * @author Will
@@ -11,5 +12,8 @@ public class SingletonTest {
         Singleton singleton = Singleton.getInstance();
         Singleton singleton1 = Singleton.getInstance();
         System.out.println(singleton.equals(singleton1));
+
+        EnumSingleton s1 = EnumSingleton.INSTANCE;
+
     }
 }
