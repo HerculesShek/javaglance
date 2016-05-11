@@ -13,4 +13,8 @@ public class Parent {
         System.out.println("foo in Parent");
         return new Parent();
     }
+
+    private final static void bar() {
+        System.out.println("bar from Parent");
+    }
 }

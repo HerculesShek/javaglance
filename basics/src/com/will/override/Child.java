@@ -14,4 +14,8 @@ public class Child extends Parent {
         System.out.println("foo in Child");
         return new Child();
     }
+
+    public final static void bar() {
+        System.out.println("bar from Parent");
+    }
 }
