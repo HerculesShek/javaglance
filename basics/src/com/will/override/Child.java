@@ -7,12 +7,11 @@ package com.will.override;
 public class Child extends Parent {
     @Override
     public void say() {
-        super.say();
         System.out.println("greetings from Child");
     }
 
-    public static void main(String[] args) {
-        Child c = new Child();
-        c.say();
+    protected static Child foo() {
+        System.out.println("foo in Child");
+        return new Child();
     }
 }
