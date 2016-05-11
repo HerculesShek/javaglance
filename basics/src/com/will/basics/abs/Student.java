@@ -16,6 +16,7 @@ public abstract class Student extends Person {
     }
 
     public Student(int age, String name, double score) {
+        super(age, name);
         this.score = score;
     }
 
