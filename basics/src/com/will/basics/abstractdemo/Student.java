@@ -1,10 +1,12 @@
-package com.will.basics.abs;
+package com.will.basics.abstractdemo;
 
 /**
  * @author Will
  * @date 16/5/11
  */
 public abstract class Student extends Person {
+    final int gender;
+
     private double score;
 
     public double getScore() {
@@ -15,8 +17,9 @@ public abstract class Student extends Person {
         this.score = score;
     }
 
-    public Student(int age, String name, double score) {
+    public Student(int age, String name, double score, int gender) {
         super(age, name);
+        this.gender = gender;
         this.score = score;
     }
 
@@ -24,4 +27,5 @@ public abstract class Student extends Person {
     public void say() {
 
     }
+
 }

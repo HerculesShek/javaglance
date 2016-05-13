@@ -1,4 +1,4 @@
-package com.will.basics.abs;
+package com.will.basics.abstractdemo;
 
 /**
  * @author Will
@@ -31,6 +31,5 @@ public abstract class Person {
     }
 
     public abstract void say();
-
 
 }
