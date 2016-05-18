@@ -2,6 +2,17 @@ package com.will.basics.pojo;
 
 
 public class Person implements Comparable<Person> {
+
+    public static int MAX = 10000;
+
+    {
+        System.out.println(this);
+        System.out.println("init a instance");
+        name = "Will";
+        age = 23;
+        System.out.println(this);
+    }
+
     private String name;
     private int age;
 
@@ -9,6 +20,7 @@ public class Person implements Comparable<Person> {
     }
 
     public Person(String name, int age) {
+        System.out.println("constructor with name and age");
         this.name = name;
         this.age = age;
     }
@@ -40,5 +52,12 @@ public class Person implements Comparable<Person> {
     @Override
     public int compareTo(Person person) {
         return this.age - person.age;
+    }
+
+
+    public static void main(String[] args) {
+        System.out.println(new Person("Jack", 23));
+        System.out.println("----------------------------------------------------");
+        System.out.println(new Person());
     }
 }
